@@ -4,17 +4,17 @@ USE Alx_book_storg;
 
 -- TABLE: AUTHORS
 CREATE TABLE Authors (
-    Author_id INT AUTO_INCREMENT PRIMARY KEY,
-    Author_name VARCHAR(215) NOT NULL
+    author_id INT AUTO_INCREMENT PRIMARY KEY,
+    author_name VARCHAR(215) NOT NULL
 );
 
 -- TABLE: Books
 CREATE TABLE Books (
-    Book_id INT AUTO_INCREMENT PRIMARY KEY,
-    Title VARCHAR(130) NOT NULL,
-    Author_id INT,
-    Price DOUBLE NOT NULL,
-    Publication_date DATE,
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(130) NOT NULL,
+    author_id INT,
+    price DOUBLE NOT NULL,
+    publication_date DATE,
     FOREIGN KEY (Author_id) REFERENCES Authors(Author_id)
 );
 
