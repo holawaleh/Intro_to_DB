@@ -20,26 +20,26 @@ CREATE TABLE Books (
 
 -- TABLE: CUSTOMERS
 CREATE Table Customers (
-    Customer_id INT AUTO_INCREMENT PRIMARY KEY,
-    Customer_name VARCHAR(215) NOT NULL,
-    Email VARCHAR(215) UNIQUE,
-    Address TEXT
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(215) NOT NULL,
+    email VARCHAR(215) UNIQUE,
+    address TEXT
 );
 
 -- TABLE: ORDERS
 CREATE Table Orders (
-    Order_id INT AUTO_INCREMENT PRIMARY KEY,
-    Customer_id INT,
-    Order_date DATE,
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
     FOREIGN KEY (Customer_id) REFERENCES Customers(Customer_id)
 );
 
 -- TABLE: ORDER_DETAILS
 CREATE Table Order_Details (
-    Orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
-    Order_id INT,
-    Book_id INT,
-    Quantity DOUBLE NOT NULL,
+    orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT,
+    oook_id INT,
+    quantity DOUBLE NOT NULL,
     FOREIGN KEY (Order_id) REFERENCES Order(Order_id),
     FOREIGN KEY (Book_id) REFERENCES Books(Book_id)
 );
